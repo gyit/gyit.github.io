@@ -1118,25 +1118,28 @@ body.is-loading #bg:before {
 }
 
 /*Member*/
-.member {
+.member, .project {
 	width: 100%;
 }
 
-.member img {
+.member img, .project img {
 	width: 60px;
 	height: 60px;
-	transform: rotate(45deg);
 	border: 1px solid rgba(255,255,255,0.5);
 	padding: 5px;
 	box-sizing: border-box;
 }
 
-.member em {
+.member img {
+	transform: rotate(45deg);
+}
+
+.member em, .project em {
 	font-size: 0.7rem;
 	font-family: arial;
 }
 
-.member span:nth-child(2) {
+.member span:nth-child(2), .project span:nth-child(2) {
 	border-bottom: 1px solid rgba(255,255,255,0.5);
 	width: 80%;
 	display: block;
@@ -1145,19 +1148,25 @@ body.is-loading #bg:before {
 	margin-left: 72px;
 }
 
-.member span:nth-child(3) {
+.project span:nth-child(2) {
+	margin-left: 60px;
+}
+
+.member span:nth-child(3), .project span:nth-child(3) {
 	display: block;
 	font-weight: 400;
 	font-size: 0.8rem;
 }
 
-.member span:nth-child(4) a {
+.member span:nth-child(4) a, .project span:nth-child(4) a {
 	margin-right: 5px;
 	font-size: 0.9rem;
 }
 
 .member:nth-child(even),
-.member:nth-child(even) img {
+.project:nth-child(even),
+.member:nth-child(even) img,
+.project:nth-child(even) img {
 	float: right;
 	margin-left: 20px;
 	text-align: right;
@@ -1167,8 +1176,14 @@ body.is-loading #bg:before {
 	margin-left: 40px;
 }
 
+.project:nth-child(even) span:nth-child(2) {
+	margin-left: 52px;
+}
+
 .member:nth-child(odd),
-.member:nth-child(odd) img {
+.project:nth-child(odd),
+.member:nth-child(odd) img,
+.project:nth-child(odd) img {
 	float: left;
 	margin-right: 20px;
 }
