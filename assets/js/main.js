@@ -1,4 +1,34 @@
+function playVideo() {
+	if(window.location.hash == '#intro') {
+		$('#intro-video').get(0).load();
+		$('#intro-video').get(0).play();
+	} else
+	{
+		$('#intro-video').get(0).pause();
+		$('#intro-video').get(0).currentTime = 0;
+	}
+}
+
+function loadSource() {
+	$('img[data-src], source[data-src]').each(function(){
+		var src = $(this).data('src');
+		$(this).get(0).src = src;
+		$(this).removeAttr('data-src');
+	});
+}
+
 (function($) {
+	//Play video when open intro popup
+	$(window).on('hashchange', function(){ 
+		loadSource();
+		playVideo();
+	});
+	
+	$(window).load(function(){ 
+		loadSource();
+		playVideo();
+	});
+	
 	//Show text in console.log
 	var msg = "%c  __________   __	   __    __ 	 __ \n /  _______/   \\ \\    / /   |__|    /  | \n | |   ____		\\ \\__/ /	 __	   _|  |__ \n | |  /__  |	 \\____/		|  |  /_    _/ \n | |_____| |	  |  |		|  |	|  |___ \n \\_________/	  |__|		|__|	\\_____/";
 	msg += "\n %c===========================================";
